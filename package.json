@@ -1,0 +1,33 @@
+{
+  "name": "react-notes-list",
+  "version": "1.0.0",
+  "description": "note-list",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiogomes/react-notes-list.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "SergioPow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiogomes/react-notes-list/issues"
+  },
+  "homepage": "https://github.com/sergiogomes/react-notes-list#readme",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.10.1",
+    "sass": "^1.14.1"
+  }
+}
