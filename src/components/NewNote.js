@@ -1,28 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-import "./index.scss";
-
-class App extends React.Component {
-  state = {
-    notes: []
-  };
-
-  handleAddNote = text => {
-    this.setState(prevState => ({
-      notes: prevState.notes.concat(text)
-    }));
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <NewNote onAddNote={this.handleAddNote} />
-        <NoteList notes={this.state.notes} />
-      </div>
-    );
-  }
-}
 
 class NewNote extends React.Component {
   state = {
@@ -59,12 +35,4 @@ class NewNote extends React.Component {
   }
 }
 
-const NoteList = ({ notes }) => (
-  <div className="note-list">
-    {notes.map(note => (
-      <div className="note">{note}</div>
-    ))}
-  </div>
-);
-
-ReactDOM.render(<App />, document.getElementById("root"));
+export default NewNote;
