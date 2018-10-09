@@ -10,3 +10,9 @@ npm start
 ```
 
 To stop the service just press `control+c`.
+
+To build the project you should run the following commands:
+
+```bash
+npm run build
+```
