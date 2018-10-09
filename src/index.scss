@@ -2,6 +2,9 @@
 
 $app-padding: 20px;
 $container-max-width: 600px;
+$color-primary: #03a9f4;
+$color-danger: #f44336;
+$color-success: #4caf50;
 
 body {
   background-color: #e8e8e8;
@@ -11,20 +14,34 @@ body {
   color: #212121;
 }
 
+.error {
+  text-align: center;
+
+  &__button {
+    background-color: $color-primary;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 12px;
+    cursor: pointer;
+    color: #fff;
+  }
+}
+
 .app-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #03a9f4;
+  background-color: $color-primary;
   color: #fff;
   @include box-shadow(2);
 
   &__container {
+    height: 46px;
     display: flex;
     align-items: center;
     margin: 0 auto;
-    padding: 12px $app-padding;
+    padding: 0 $app-padding;
     max-width: $container-max-width;
   }
 
@@ -45,10 +62,15 @@ body {
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.08);
+      border-radius: 20%;
     }
 
     &--rotation {
       @include rotation();
+    }
+
+    &--danger {
+      color: $color-danger;
     }
   }
 }
@@ -110,11 +132,11 @@ body {
     }
 
     &--red {
-      color: #f44336;
+      color: $color-danger;
     }
 
     &--green {
-      color: #4caf50;
+      color: $color-success;
     }
   }
 }
