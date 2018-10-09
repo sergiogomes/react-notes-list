@@ -2,6 +2,8 @@
 
 A repository for react note management.
 
+[react-notes](https://react-notes.netlify.com)
+
 To get the project running you should run the following commands:
 
 ```bash
