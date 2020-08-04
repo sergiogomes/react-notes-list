@@ -18,3 +18,16 @@ To build the project you should run the following commands:
 ```bash
 npm run build
 ```
+
+Babel
+JSX research
+
+```css
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+```
