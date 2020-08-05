@@ -5,7 +5,7 @@ With Note.js you can list all your notes and prioritize them. All notes will sta
 
 [react-notes](https://react-notes.netlify.com)
 
-[Notes Image](https://react-notes.netlify.app/notes.129b31f5.png)
+![Notes Image](https://react-notes.netlify.app/notes.129b31f5.png)
 
 ## Run
 
