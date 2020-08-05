@@ -1,8 +1,13 @@
 # react-notes-list
 
-A repository for react note management.
+Note.js - Prioritize Your Notes
+With Note.js you can list all your notes and prioritize them. All notes will stay saved on the device you created them.
 
 [react-notes](https://react-notes.netlify.com)
+
+[Notes Image](https://react-notes.netlify.app/notes.129b31f5.png)
+
+## Run
 
 To get the project running you should run the following commands:
 
@@ -18,6 +23,10 @@ To build the project you should run the following commands:
 ```bash
 npm run build
 ```
+
+## Favicon
+
+[Favicon](https://favicon.io/)
 
 ## Concepts
 

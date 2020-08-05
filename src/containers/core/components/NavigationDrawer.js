@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 const NavigationDrawer = ({ isOpen, onCloseMenu, history }) => (
   <div
     className={classNames("navigation-drawer", {
-      "navigation-drawer--open": isOpen
+      "navigation-drawer--open": isOpen,
     })}
   >
     <div className="navigation-drawer__head">
@@ -21,7 +21,7 @@ const NavigationDrawer = ({ isOpen, onCloseMenu, history }) => (
           history.push("/");
         }}
       >
-        <i className="material-icons">note</i> Notas
+        <i className="material-icons">note</i> Notes
       </button>
       <button
         className="navigation-drawer__menu__item"
@@ -30,7 +30,7 @@ const NavigationDrawer = ({ isOpen, onCloseMenu, history }) => (
           history.push("/about");
         }}
       >
-        <i className="material-icons">info</i> Sobre
+        <i className="material-icons">info</i> About
       </button>
     </div>
   </div>

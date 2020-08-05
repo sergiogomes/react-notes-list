@@ -118,7 +118,7 @@ class App extends React.Component {
   };
 
   /**
-   * Calls NoteService to retrieve the notes from localstorage
+   * Calls NoteService to retrieve the notes from localStorage
    */
   handleReload = () => {
     this.setState({ isLoading: true, reloadHasError: false });
@@ -132,7 +132,7 @@ class App extends React.Component {
   };
 
   /**
-   *
+   * Calls NoteService to save the notes on localStorage
    * @param {Array<Note object>} notes
    */
   handleSave = (notes) => {
