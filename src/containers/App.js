@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import uuid from "uuid/v1";
+import { v1 as uuidv1 } from "uuid";
 
-import AppBar from "../components/AppBar";
-import NavigationDrawer from "../components/NavigationDrawer";
-import About from "./About.js";
-import Notes from "./Notes.js";
-import NoteService from "../Services/NoteServices";
+import AppBar from "./core/components/AppBar";
+import NavigationDrawer from "./core/components/NavigationDrawer";
+import About from "./about/About";
+import Notes from "./notes/Notes";
+import NoteService from "./notes/services/NoteService";
 
 class App extends React.Component {
   state = {
@@ -14,7 +14,7 @@ class App extends React.Component {
     isLoading: false,
     isMenuOpen: false,
     reloadHasError: false,
-    saveHasError: false
+    saveHasError: false,
   };
 
   componentDidCatch() {
@@ -25,9 +25,9 @@ class App extends React.Component {
     this.handleReload();
   }
 
-  handleAddNote = text => {
-    this.setState(prevState => {
-      const notes = prevState.notes.concat({ id: uuid(), text });
+  handleAddNote = (text) => {
+    this.setState((prevState) => {
+      const notes = prevState.notes.concat({ id: uuidv1(), text });
 
       this.handleSave(notes);
 
@@ -36,7 +36,7 @@ class App extends React.Component {
   };
 
   handleMove = (direction, index) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newNotes = prevState.notes.slice();
       const removedNote = newNotes.splice(index, 1)[0];
 
@@ -49,35 +49,35 @@ class App extends React.Component {
       this.handleSave(newNotes);
 
       return {
-        notes: newNotes
+        notes: newNotes,
       };
     });
   };
 
-  handleDelete = id => {
-    this.setState(prevState => {
+  handleDelete = (id) => {
+    this.setState((prevState) => {
       const newNotes = prevState.notes.slice();
-      const index = newNotes.findIndex(note => note.id === id);
+      const index = newNotes.findIndex((note) => note.id === id);
       newNotes.splice(index, 1);
 
       this.handleSave(newNotes);
 
       return {
-        notes: newNotes
+        notes: newNotes,
       };
     });
   };
 
   handleEdit = (id, text) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newNotes = prevState.notes.slice();
-      const index = newNotes.findIndex(note => note.id === id);
+      const index = newNotes.findIndex((note) => note.id === id);
       newNotes[index].text = text;
 
       this.handleSave(newNotes);
 
       return {
-        notes: newNotes
+        notes: newNotes,
       };
     });
   };
@@ -85,7 +85,7 @@ class App extends React.Component {
   handleReload = () => {
     this.setState({ isLoading: true, reloadHasError: false });
     NoteService.load()
-      .then(notes => {
+      .then((notes) => {
         this.setState({ notes, isLoading: false });
       })
       .catch(() => {
@@ -93,7 +93,7 @@ class App extends React.Component {
       });
   };
 
-  handleSave = notes => {
+  handleSave = (notes) => {
     this.setState({ isLoading: true, saveHasError: false });
     NoteService.save(notes)
       .then(() => {
@@ -118,7 +118,7 @@ class App extends React.Component {
       isLoading,
       isMenuOpen,
       reloadHasError,
-      saveHasError
+      saveHasError,
     } = this.state;
 
     return (
@@ -137,7 +137,7 @@ class App extends React.Component {
               <Route
                 path="/"
                 exact
-                render={props => (
+                render={(props) => (
                   <Notes
                     notes={notes}
                     reloadHasError={reloadHasError}

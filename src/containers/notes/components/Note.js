@@ -20,7 +20,7 @@ class Note extends React.Component {
   };
 
   render() {
-    const { note, index, onEdit, onDelete, onMove, total } = this.props;
+    const { note, onDelete, index, onMove, total } = this.props;
     const { isEditing } = this.state;
 
     return (
@@ -41,39 +41,34 @@ class Note extends React.Component {
           <React.Fragment>
             <button
               className="note__button note__button--red"
-              onClick={() => {
-                this.handleCancel();
-              }}
+              onClick={this.handleCancel}
             >
               <i className="material-icons">cancel</i>
             </button>
-
             <button
               className="note__button note__button--green"
-              onClick={() => {
-                this.handleSave();
-              }}
+              onClick={this.handleSave}
             >
               <i className="material-icons">done_outline</i>
             </button>
           </React.Fragment>
         )}
-
-        {!isEditing && (
-          <React.Fragment>
-            <button className="note__button" onClick={this.handleEdit}>
-              <i className="material-icons">edit</i>
-            </button>
-            <button
-              className="note__button"
-              onClick={() => {
-                onDelete(note.id);
-              }}
-            >
-              <i className="material-icons">delete</i>
-            </button>
-          </React.Fragment>
-        )}
+        <button
+          disabled={isEditing}
+          className="note__button"
+          onClick={this.handleEdit}
+        >
+          <i className="material-icons">edit</i>
+        </button>
+        <button
+          disabled={isEditing}
+          className="note__button"
+          onClick={() => {
+            onDelete(note.id);
+          }}
+        >
+          <i className="material-icons">delete</i>
+        </button>
         <button
           className={classNames("note__button", {
             "note__button--hidden": index === 0

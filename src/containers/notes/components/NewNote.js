@@ -2,7 +2,7 @@ import React from "react";
 
 class NewNote extends React.Component {
   state = {
-    text: ""
+    text: "",
   };
 
   render() {
@@ -16,16 +16,16 @@ class NewNote extends React.Component {
           className="new-note__input"
           placeholder="Type your note here..."
           value={text}
-          onChange={event => {
+          onChange={(event) => {
             this.setState({
-              text: event.target.value
+              text: event.target.value,
             });
           }}
-          onKeyPress={event => {
+          onKeyPress={(event) => {
             if (event.key === "Enter") {
               onAddNote(event.target.value);
               this.setState({
-                text: ""
+                text: "",
               });
             }
           }}

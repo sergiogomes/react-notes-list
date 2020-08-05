@@ -8,9 +8,9 @@ const NoteList = ({ notes, onMove, onDelete, onEdit }) => (
       <Note
         key={note.id}
         note={note}
-        index={index}
         onEdit={onEdit}
         onDelete={onDelete}
+        index={index}
         onMove={onMove}
         total={notes.length}
       />

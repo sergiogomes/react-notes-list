@@ -21,7 +21,7 @@ const NavigationDrawer = ({ isOpen, onCloseMenu, history }) => (
           history.push("/");
         }}
       >
-        <i className="material-icons">note</i> Notes
+        <i className="material-icons">note</i> Notas
       </button>
       <button
         className="navigation-drawer__menu__item"
@@ -30,7 +30,7 @@ const NavigationDrawer = ({ isOpen, onCloseMenu, history }) => (
           history.push("/about");
         }}
       >
-        <i className="material-icons">info</i> About
+        <i className="material-icons">info</i> Sobre
       </button>
     </div>
   </div>
