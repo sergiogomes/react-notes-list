@@ -30,6 +30,10 @@ npm run build
 
 ## Concepts
 
+### React’s virtual DOM
+
+React’s virtual DOM is faster than the conventional full refresh model, since the virtual DOM refreshes only parts of the page.
+
 ### Babel
 
 Babel

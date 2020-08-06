@@ -1,6 +1,6 @@
 import React from "react";
 
-import notesImg from "../../assets/imgs/notes.png";
+import notesImg from "../../assets/images/notes.png";
 
 const About = () => (
   <div className="about">
